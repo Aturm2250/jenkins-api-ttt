@@ -24,10 +24,10 @@ pipeline {
                 echo 'Testing..'
                  script {
                     echo 'git pull'
-                    sshCommand(remote: vm2, command: 'cd api-jenkins-ttt/ && git pull')
+                    sshCommand(remote: vm2, command: 'cd api-jenkins-assignment/ && git pull')
                 
                     echo 'Run unit test'
-                    sshCommand(remote: vm2, command: 'cd api-jenkins-ttt/ && python3 unit_test.py')
+                    sshCommand(remote: vm2, command: 'cd api-jenkins-assignment/ && python3 unit_test.py')
                 }
             }
         }
@@ -35,7 +35,7 @@ pipeline {
             steps {
                 script {
                     echo 'Building..'
-                    sshCommand(remote: vm2, command: "cd api-jenkins-ttt/ && echo 'maxloveatron' | sudo -S docker-compose up -d --build")
+                    sshCommand(remote: vm2, command: "cd api-jenkins-assignment/ && echo 'maxloveatron' | sudo -S docker-compose up -d --build")
                 }
             }
         }
@@ -54,7 +54,7 @@ pipeline {
             steps {
                 script {
                     echo 'gitlab login & push'
-                    sshCommand(remote: vm2, command: "cd api-jenkins-ttt/ \
+                    sshCommand(remote: vm2, command: "cd api-jenkins-assignment/ \
                     && echo 'maxloveatron' | sudo -S docker login registry.gitlab.com \
                     && echo 'Aturm2250' \
                     && echo 'bepmu7-witXej-fekzus' \
