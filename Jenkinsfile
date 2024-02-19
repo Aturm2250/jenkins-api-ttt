@@ -8,7 +8,7 @@ vm2.allowAnyHosts = true
 
 def vm3=[:]
 vm3.name = 'vm3'
-vm3.host = '192.168.56.103'
+vm3.host = '192.168.56.104'
 vm3.user = 'admin01'
 vm3.port = 22
 vm3.password = 'maxloveatron'
