@@ -1,9 +1,9 @@
 def vm2=[:]
 vm2.name = 'vm2'
-vm2.host = '192.168.56.103'
+vm2.host = '192.168.56.105'
 vm2.user = 'admin01'
 vm2.port = 22
-vm2.password = 'maxloveatron'
+vm2.password = '123789'
 vm2.allowAnyHosts = true
 
 def vm3=[:]
@@ -11,7 +11,7 @@ vm3.name = 'vm3'
 vm3.host = '192.168.56.104'
 vm3.user = 'admin01'
 vm3.port = 22
-vm3.password = 'maxloveatron'
+vm3.password = '123789'
 vm3.allowAnyHosts = true
 
 
@@ -55,11 +55,11 @@ pipeline {
                 script {
                     echo 'gitlab login & push'
                     sshCommand(remote: vm2, command: "cd jenkins-api-ttt/ \
-                    && echo 'maxloveatron' | sudo -S docker login registry.gitlab.com \
+                    && echo '123789' | sudo -S docker login registry.gitlab.com \
                     && echo 'Aturm2250' \
                     && echo 'bepmu7-witXej-fekzus' \
-                    && echo 'maxloveatron' | sudo -S docker build -t registry.gitlab.com/jimmymonster/jenkins-api-unittest . \
-                    && echo 'maxloveatron' | sudo -S docker push registry.gitlab.com/jimmymonster/jenkins-api-unittest"
+                    && echo '123789' | sudo -S docker build -t registry.gitlab.com/jimmymonster/jenkins-api-unittest . \
+                    && echo '123789' | sudo -S docker push registry.gitlab.com/jimmymonster/jenkins-api-unittest"
                     )
 
                 }
@@ -71,10 +71,10 @@ pipeline {
                 sshCommand(remote: vm3, command: "echo 'maxloveatron' | sudo -S docker login registry.gitlab.com \
                     && echo 'Aturm2250' \
                     && echo 'bepmu7-witXej-fekzus' \
-                    && echo 'maxloveatron' | sudo -S docker pull registry.gitlab.com/jimmymonster/jenkins-api-unittest \
-                    && echo 'maxloveatron' | sudo -S docker stop api \
-                    && echo 'maxloveatron' | sudo -S docker rm api \
-                    && echo 'maxloveatron' | sudo -S docker run -d -p 8001:5000 --name api registry.gitlab.com/jimmymonster/jenkins-api-unittest"
+                    && echo '123789' | sudo -S docker pull registry.gitlab.com/jimmymonster/jenkins-api-unittest \
+                    && echo '123789' | sudo -S docker stop api \
+                    && echo '123789' | sudo -S docker rm api \
+                    && echo '123789' | sudo -S docker run -d -p 8001:5000 --name api registry.gitlab.com/jimmymonster/jenkins-api-unittest"
                     )
 
             }
